@@ -1,0 +1,9 @@
+{
+  "name": "dice-roller",
+  "version": "1.0.0",
+  "description": "Dice roller simulator app",
+  "main": "index.js",
+  "repository": "https://github.com/sorija/dice-roller",
+  "author": "Joanna Gawełda",
+  "license": "MIT"
+}
