@@ -4,4 +4,4 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 
-ReactDOM.render((<p>Boilerplate </p>), document.getElementById('app'));
+ReactDOM.render((<p>DnD Dice Roller </p>), document.getElementById('app'));
