@@ -2,7 +2,9 @@ import React from 'react';
 
 const Die = (props) => (
   <div>
-    <button value={props.dieType}>D{props.dieType}</button>
+    {props.dieType.map(function(type,i) {
+      return <button value={type} key={i} onClick={props.handleDiePick}>D{type}</button>
+    })}
   </div>
 );
 
