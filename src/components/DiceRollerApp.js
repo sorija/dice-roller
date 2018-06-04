@@ -1,6 +1,7 @@
 import React from 'react';
 import Die from './Die';
 import Modifier from './Modifier';
+import RollResult from './RollResult';
 
 class DiceRollerApp extends React.Component {
   state = {
@@ -31,12 +32,7 @@ class DiceRollerApp extends React.Component {
         <Modifier modifiers={this.state.modifiers} modValue={this.state.modValue} handleModChange={this.handleModChange}/>
         <h3>Selected:{this.state.diePick ? 'd' + this.state.diePick : ''}</h3>
         <button onClick={this.handleDieRoll}>Roll!</button>
-        {this.state.rollResult && (
-          <div>
-            <h2>Your result: {Number(this.state.rollResult) + Number(this.state.modValue)}</h2>
-            <h4>{this.state.rollResult}+{this.state.modValue > 0 ? this.state.modValue : '(' + this.state.modValue + ')'}</h4>
-          </div>
-        )}
+        <RollResult rollResult={this.state.rollResult} modValue={this.state.modValue}/>
       </main>
     )
   }
