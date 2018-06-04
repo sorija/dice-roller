@@ -4,8 +4,8 @@ const RollResult = (props) => (
   <div>
   {props.rollResult && (
     <div>
-      <h2>Your result: {Number(props.rollResult) + Number(props.modValue)}</h2>
-      <h4>{props.rollResult}+{props.modValue > 0 ? props.modValue : '(' + props.modValue + ')'}</h4>
+      <h3>{props.rollResult}+{props.modValue > 0 ? props.modValue : '(' + props.modValue + ')'}</h3>
+      <h1>Your result: {Number(props.rollResult) + Number(props.modValue)}</h1>
     </div>
   )}
   </div>
