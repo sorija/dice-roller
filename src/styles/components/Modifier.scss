@@ -1,0 +1,29 @@
+.mod-container {
+  align-items: center;
+  border: 5px double $off-black;
+  border-radius: $M-size;
+  box-shadow: 0 4px 6px 0 $shadow;
+  display: flex;
+  flex-direction: column;
+  grid-area: modifier;
+  height: 8rem;
+  width: 12rem;
+}
+// reset select
+.mod-container__select select {
+  appearance: none;
+  background: none;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+// custom select
+.mod-container__select {
+  background-color: $off-white;
+  border: 3px double $off-black;
+  border-radius: $M-size;
+  display: inline-block;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}

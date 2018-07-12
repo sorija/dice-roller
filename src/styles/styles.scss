@@ -1,7 +1,9 @@
 @import './base/settings';
 @import './base/base';
 @import './components/Die';
-@import './components/DiceRollerApp';
+@import './components/Modifier';
+@import './components/RollResult';
 @import './components/_header';
-@import './components/_footer';
 @import './components/_content-container';
+@import './components/_page-container';
+@import './components/_selection';

@@ -1,0 +1,15 @@
+.header {
+  align-items: center;
+  border-radius: 0 0 $S-size $S-size;
+  box-shadow: 0 4px 6px 0 $shadow;
+  background-color: $shadow;
+  color: $deep-red;
+  display: flex;
+  height: 5vh;
+  justify-content: flex-start;
+  padding: 5vmin 1rem;
+  h1 {
+    font-size: 8vmin;
+    margin: $S-size;
+  }
+}
