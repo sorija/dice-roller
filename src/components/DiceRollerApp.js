@@ -26,14 +26,17 @@ class DiceRollerApp extends React.Component {
   };
   render () {
     return (
-      <main>
+      <main className="page-container">
         <header className="header">
           <h1 className="title">D&Dice</h1>
         </header>
         <div className="content-container">
-          <Modifier modifiers={this.state.modifiers} modValue={this.state.modValue} handleModChange={this.handleModChange}/>
           <Die dieType={this.state.dieType} handleDieRoll={this.handleDieRoll}/>
-          <h3>Selected:{this.state.diePick ? ' d' + this.state.diePick : ''}</h3>
+          <Modifier modifiers={this.state.modifiers} modValue={this.state.modValue} handleModChange={this.handleModChange}/>
+          <div className="selection">
+            <h3 className="selection__head">Selected:</h3>
+            <p className="selection__die">{this.state.diePick ? ' d' + this.state.diePick : ''}</p>
+          </div>
           <RollResult rollResult={this.state.rollResult} modValue={this.state.modValue}/>
         </div>
       </main>
