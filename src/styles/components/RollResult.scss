@@ -1,3 +1,21 @@
 .roll-result {
   grid-area: result;
+  // border-top: 3px solid $off-black;
+  // border-bottom: 3px solid $off-black;
+  // border: 3px solid $off-black;
+  border-radius: $L-size;
+
+  width: 80%;
+  text-align: center;
+  h3 {
+    margin-bottom: .5rem;
+  }
+  #roll {
+    font-size: 5rem;
+    margin: $XS-size;
+    text-shadow: 3px 4px 2px $off-black;
+  }
+  #calculation {
+    color: $off-black;
+  }
 }

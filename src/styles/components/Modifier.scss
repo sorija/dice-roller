@@ -1,13 +1,15 @@
 .mod-container {
   align-items: center;
-  border: 5px double $off-black;
-  border-radius: $M-size;
+  align-self: center;
+  border: 3px solid $off-black;
+  border-radius: $L-size;
   box-shadow: 0 4px 6px 0 $shadow;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   grid-area: modifier;
-  height: 8rem;
-  width: 12rem;
+  height: 8.5rem;
+  justify-content: space-around;
+  width: 80%;
 }
 // reset select
 .mod-container__select select {
@@ -19,11 +21,12 @@
 }
 // custom select
 .mod-container__select {
-  background-color: $off-white;
-  border: 3px double $off-black;
+  background-color: rgba($off-black, .8);
+  border: 3px solid $off-black;
   border-radius: $M-size;
+  color: $off-white;
   display: inline-block;
-  padding: 0;
+  padding: $XS-size;
   position: relative;
   z-index: 1;
 }

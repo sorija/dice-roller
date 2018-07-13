@@ -1,6 +1,7 @@
 import React from 'react';
 import Die from './Die';
 import Modifier from './Modifier';
+// import Selection from './Selection';
 import RollResult from './RollResult';
 
 class DiceRollerApp extends React.Component {
@@ -33,10 +34,7 @@ class DiceRollerApp extends React.Component {
         <div className="content-container">
           <Die dieType={this.state.dieType} handleDieRoll={this.handleDieRoll}/>
           <Modifier modifiers={this.state.modifiers} modValue={this.state.modValue} handleModChange={this.handleModChange}/>
-          <div className="selection">
-            <h3 className="selection__head">Selected:</h3>
-            <p className="selection__die">{this.state.diePick ? ' d' + this.state.diePick : ''}</p>
-          </div>
+          {/*<Selection diePick={this.state.diePick}/>*/}
           <RollResult rollResult={this.state.rollResult} modValue={this.state.modValue}/>
         </div>
       </main>
