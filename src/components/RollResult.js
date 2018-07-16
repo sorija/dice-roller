@@ -2,11 +2,10 @@ import React from 'react';
 
 const RollResult = (props) => (
   <div className="roll-result">
-  <h3>Your roll: </h3>
   {props.rollResult && (
     <div className="roll-result__show">
-    <h1 id="roll">{Number(props.rollResult) + Number(props.modValue)}</h1>
-    <h3 id="calculation">{props.rollResult}+{props.modValue > 0 ? props.modValue : '(' + props.modValue + ')'}</h3>
+      <h1 id="roll">{Number(props.rollResult) + Number(props.modValue)}</h1>
+      <h3 id="calculation">{props.rollResult}+{props.modValue > 0 ? props.modValue : '(' + props.modValue + ')'}</h3>
     </div>
   )}
   </div>

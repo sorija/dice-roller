@@ -1,11 +1,12 @@
 .content-container {
   color: $deep-red;
-  height: 95vh;
+  min-height: 90vh;
+  max-height: 95vh;
   margin: 0 auto;
-
+  //grid setup
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: .5fr 2fr 1fr;
+  grid-template-rows: auto 2fr .75fr;
   grid-template-areas:
     "result result result result"
     "dice dice dice dice"

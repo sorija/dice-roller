@@ -11,14 +11,13 @@ html {
 }
 
 body {
-  background: url('/images/background-texture.jpg') no-repeat center center fixed;
-  background-size: cover;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: $M-size;
-  margin: 0;
-  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #E5E5D9;
+  font-family: 'Marck Script', Helvetica, Arial, sans-serif;
+  font-size: $L-size;
+  margin: 0;
+  min-height: 100vh;
 }
 
 button {

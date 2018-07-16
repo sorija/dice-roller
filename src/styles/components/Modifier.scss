@@ -1,16 +1,19 @@
 .mod-container {
   align-items: center;
   align-self: center;
-  border: 3px solid $off-black;
-  border-radius: $L-size;
+  border-radius: $S-size;
   box-shadow: 0 4px 6px 0 $shadow;
   display: flex;
   flex-direction: row;
   grid-area: modifier;
-  height: 8.5rem;
+  height: 6rem;
   justify-content: space-around;
   width: 80%;
 }
+.mod-container__title {
+  margin: 0 auto;
+}
+
 // reset select
 .mod-container__select select {
   appearance: none;
@@ -19,14 +22,15 @@
   -moz-appearance: none;
   -webkit-appearance: none;
 }
+
 // custom select
 .mod-container__select {
   background-color: rgba($off-black, .8);
   border: 3px solid $off-black;
-  border-radius: $M-size;
+  border-radius: $S-size;
   color: $off-white;
   display: inline-block;
-  padding: $XS-size;
+  padding: $XXS-size;
   position: relative;
   z-index: 1;
 }
