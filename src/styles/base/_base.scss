@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #E5E5D9;
-  font-family: 'Marck Script', Helvetica, Arial, sans-serif;
+  font-family: 'Marck Script', Arial, Helvetica, sans-serif;
   font-size: $L-size;
   margin: 0;
   min-height: 100vh;
@@ -22,4 +22,11 @@ body {
 
 button {
   cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+.num {
+  font-family: Kalam, Arial, Helvetica, sans-serif;
 }

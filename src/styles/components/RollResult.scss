@@ -12,11 +12,12 @@
   #roll {
     font-size: 8rem;
     margin: 0 auto;
-    text-shadow: 3px 4px 2px #27242480;
+    text-shadow: 1px 1px $off-black;
   }
   #calculation {
     color: $off-black;
-    font-size: $L-size;
+    font-size: 2.5rem;
+    letter-spacing: $XXS-size;
     margin: 0 auto;
   }
 }

@@ -7,7 +7,6 @@
   flex-direction: row;
   grid-area: modifier;
   height: 6rem;
-  justify-content: space-around;
   width: 80%;
 }
 .mod-container__title {
@@ -30,7 +29,9 @@
   border-radius: $S-size;
   color: $off-white;
   display: inline-block;
-  padding: $XXS-size;
+  margin: 0 auto;
   position: relative;
+  text-align: center;
+  width: 8rem;
   z-index: 1;
 }
