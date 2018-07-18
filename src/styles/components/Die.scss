@@ -1,19 +1,26 @@
 .dice-container {
   font-size: 2.4rem;
   grid-area: dice;
-  grid-column: 1/5;
-  grid-row: 2/3;
-  //grid setup
+  // grid-column: 1/5;
+  // grid-row: 2/3;
+  //setup grid
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-template-areas: 
     ". d20 ."
-    "d4 d6 d8"
-    "d10 d12 d100";
+    "d4 d12 d8"
+    "d6 d100 d10";
   grid-row-gap: $XS-size;
   justify-self: stretch;
   margin: .5rem 0;
+  @media (min-width: $desktop-breakpoint){
+    font-size: 3rem;
+    grid-gap: $M-size $M-size;
+    margin: $M-size;
+    min-height: 50vh;
+    padding-bottom: $S-size;
+  }
 }
 
 .d4 {
@@ -58,6 +65,7 @@
   border: none;
   color: $off-black;
   padding: 0;
+  text-shadow:  1px 1px $off-white;
   transition: all .3s ease-in-out;
   &:hover {
    -webkit-transform: scale(1.2);

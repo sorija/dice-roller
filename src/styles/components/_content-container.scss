@@ -1,8 +1,8 @@
 .content-container {
+  margin: 0 auto;
   min-height: 92vh;
   max-height: 95vh;
-  margin: 0 auto;
-  //grid setup
+  //setup grid
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto 2fr .75fr;
@@ -11,4 +11,15 @@
     "dice dice dice dice"
     "modifier modifier modifier modifier";
   justify-items: center;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin: $M-size;
+    min-height: 87vh;
+    //adjust grid
+    grid-gap: $M-size $M-size;
+    grid-template-areas: 
+      "modifier result result ."
+      "dice dice dice dice"
+      "dice dice dice dice";
+  }
 }
