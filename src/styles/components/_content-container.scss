@@ -1,5 +1,5 @@
 .content-container {
-  min-height: 90vh;
+  min-height: 92vh;
   max-height: 95vh;
   margin: 0 auto;
   //grid setup
@@ -10,6 +10,5 @@
     "result result result result"
     "dice dice dice dice"
     "modifier modifier modifier modifier";
-  grid-row-gap: $XS-size;
   justify-items: center;
 }

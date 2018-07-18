@@ -13,7 +13,7 @@
     "d10 d12 d100";
   grid-row-gap: $XS-size;
   justify-self: stretch;
-  margin: $XXS-size 0;
+  margin: .5rem 0;
 }
 
 .d4 {
@@ -57,9 +57,8 @@
   background-size: contain;
   border: none;
   color: $off-black;
-  height: 100%;
+  padding: 0;
   transition: all .3s ease-in-out;
-  width: 100%;
   &:hover {
    -webkit-transform: scale(1.2);
     transform: scale(1.2) rotate(360deg);

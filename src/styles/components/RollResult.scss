@@ -1,22 +1,25 @@
 .roll-result {
+  background-color: $deeper-blue;
+  border: 3px solid $deeper-blue;
+  border-radius: $S-size;
+  box-shadow: 0 4px 6px 0 $shadow;
   grid-area: result;
+  min-height: 13.2rem;
   width: 80%;
 }
 
 .roll-result__show {
-  border: 3px solid $deeper-blue;
-  border-radius: $S-size;
-  box-shadow: 0 4px 6px 0 $shadow;
   justify-content: center;
   text-align: center;
+  text-shadow:  1px 1px $off-black,
+                2px 2px $off-black;
   #roll {
+    padding-top: $XXS-size;
     font-size: 8rem;
-    margin: $XS-size auto;
-    text-shadow:  1px 1px $off-black,
-                  2px 2px $off-black;
+    margin: 0 auto;
   }
   #calculation {
-    color: $off-black;
+    color: $deep-blue;
     font-size: 2.5rem;
     letter-spacing: $XXS-size;
     margin: 0 auto;

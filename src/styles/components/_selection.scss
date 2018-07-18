@@ -1,0 +1,20 @@
+.selection {
+  align-items: center;
+  border: 5px double $off-black;
+  border-radius: $M-size;
+  box-shadow: 0 4px 6px 0 $shadow;
+  display: flex;
+  flex-direction: column;
+  grid-area: selection;
+  height: 8rem;
+  width: 12rem;
+}
+
+.selection__die {
+  background-color: $off-white;
+  border: 3px double $off-black;
+  border-radius: $M-size;
+  height: 4rem;
+  padding: $XXS-size;
+  width: 4rem;
+}
