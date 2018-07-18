@@ -13,7 +13,8 @@ html {
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #E5E5D9;
+  background-color: $deep-blue;
+  color: $off-white;
   font-family: 'Marck Script', Arial, Helvetica, sans-serif;
   font-size: $L-size;
   margin: 0;

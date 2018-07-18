@@ -1,15 +1,18 @@
 .header {
   align-items: center;
   box-shadow: 0 4px 6px 0 $shadow;
-  color: $deep-red;
+  background-color: $deeper-blue;
   display: flex;
   height: 5vh;
   justify-content: center;
   letter-spacing: $XS-size;
-  margin: .25rem;
+  margin: 0 0 .5rem 0;
   padding: 5vmin 1rem;
   h1 {
     font-size: 8vmin;
     margin: $S-size;
+    text-shadow:  1px 1px $off-black,
+                  2px 2px $off-black,
+                  3px 3px $off-black;
   }
 }
