@@ -32,10 +32,20 @@ class DiceRollerApp extends React.Component {
           <h1 className="title">D&Dice</h1>
         </header>
         <div className="content-container">
-          <Die dieType={this.state.dieType} handleDieRoll={this.handleDieRoll}/>
-          <Modifier modifiers={this.state.modifiers} modValue={this.state.modValue} handleModChange={this.handleModChange}/>
-          {/*<Selection diePick={this.state.diePick}/>*/}
-          <RollResult rollResult={this.state.rollResult} modValue={this.state.modValue}/>
+          <Die
+            dieType={this.state.dieType}
+            handleDieRoll={this.handleDieRoll}
+          />
+          <Modifier
+            modifiers={this.state.modifiers}
+            modValue={this.state.modValue}
+            handleModChange={this.handleModChange}
+          />
+          <RollResult
+            rollResult={this.state.rollResult}
+            modValue={this.state.modValue}
+            diePick={this.state.diePick}
+          />
         </div>
       </main>
     )

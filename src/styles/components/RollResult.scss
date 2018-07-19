@@ -20,15 +20,22 @@
   text-align: center;
   text-shadow:  1px 1px $off-black,
                 2px 2px $off-black;
-  #roll {
+  .roll {
     font-size: 8rem;
   }
-  #calculation {
+  .calc {
     color: $deep-blue;
     font-size: 2.5rem;
     letter-spacing: $XXS-size;
+    margin: 0 auto;
   }
-  #roll, #calculation {
+  .crit-failure {
+    color: #ff0000;
+  }
+  .crit-success {
+    color:#008000;
+  }
+  .roll, .calculation {
     margin: 0 auto;
     @media (min-width: $desktop-breakpoint) {
       margin-top: $L-size;
