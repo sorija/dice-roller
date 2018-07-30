@@ -28,6 +28,22 @@
     font-size: 2.5rem;
     letter-spacing: $XXS-size;
     margin: 0 auto;
+    &.crit-failure, &.crit-success {
+      -webkit-animation: pulse 1.4s linear infinite;
+      -moz-animation: pulse 1.4s linear infinite;
+      animation: pulse 1.4s linear infinite;
+    }
+  }
+  @keyframes pulse{
+    25%{
+      transform: scale(0.9);
+    }
+    50%{
+      transform: scale(1.0);
+    }
+    75%{
+      transform: scale(1.1);
+    }
   }
   .crit-failure {
     color: #ff0000;
@@ -35,6 +51,7 @@
   .crit-success {
     color:#008000;
   }
+
   .roll, .calculation {
     margin: 0 auto;
     @media (min-width: $desktop-breakpoint) {
