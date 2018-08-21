@@ -1,7 +1,6 @@
 import React from 'react';
 import Die from './Die';
 import Modifier from './Modifier';
-// import Selection from './Selection';
 import RollResult from './RollResult';
 
 class DiceRollerApp extends React.Component {
@@ -9,8 +8,10 @@ class DiceRollerApp extends React.Component {
     dieType: [4,6,8,10,12,20,100],
     modifiers: [-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10],
     modValue: 0,
-    diePick: undefined,
+    randomNumbers: null,
     rollResult: undefined,
+    diePick: undefined,
+    error: undefined
   };
   handleModChange = (e) => {
     const modValue = e.target.value;
@@ -25,6 +26,21 @@ class DiceRollerApp extends React.Component {
       rollResult: randomNum
     }));
   };
+  componentDidMount = () => {
+    // generate pool of 250 random numbers
+    const generateRolls = () => {
+      return new Promise((resolve, reject) => {
+        let rolls = [];
+        while(rolls.length < 250) {
+          const randomRoll = Math.floor(Math.random() * 600);
+          rolls[rolls.length] = randomRoll;
+        }
+        resolve(rolls);
+        console.log("rolls after resolve", rolls);
+      });
+    }
+    generateRolls().then(rolls => {this.setState({randomNumbers: rolls})});
+  }
   render () {
     return (
       <main className="page-container">
