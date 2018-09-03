@@ -26,20 +26,50 @@ class DiceRollerApp extends React.Component {
       rollResult: randomNum
     }));
   };
-  componentDidMount = () => {
-    // generate pool of 250 random numbers
-    const generateRolls = () => {
-      return new Promise((resolve, reject) => {
-        let rolls = [];
-        while(rolls.length < 250) {
-          const randomRoll = Math.floor(Math.random() * 600);
-          rolls[rolls.length] = randomRoll;
-        }
-        resolve(rolls);
-        console.log("rolls after resolve", rolls);
+  async componentDidMount() {
+    try {
+      // RANDOM API (https://api.random.org/json-rpc/1/introduction)
+      // size of the range for min/max is the least common multiple of all dice (offset for correct modulo results)
+      // finding lcm by prime factorization: lcm(4,6,8,10,12,20,100) = 2^3 x 3 x 5^2 = 600
+      const API_KEY = process.env.BETA_RANDOM_API_KEY;
+      const response = await fetch("https://api.random.org/json-rpc/1/invoke", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json-rpc"
+        },
+        body: JSON.stringify({
+          "jsonrpc": "2.0",
+          "method": "generateIntegers",
+          "params": {
+            "apiKey": API_KEY,
+            "n": 250,
+            "min": 0,
+            "max": 599
+          },
+          "id": 42
+        })
       });
+      if (response.status != 200) {
+        throw "API did not cooperate";
+      }
+      const { result: { random: {data} } } = await response.json();
+      this.setState({randomNumbers: data});
+    } catch (error) {
+      console.log(error);
+      console.log("Initialized backup rolls generator.");
+      // generate pool of 250 random numbers
+      const generateRolls = () => {
+        return new Promise((resolve, reject) => {
+          let rolls = [];
+          while(rolls.length < 250) {
+            const randomRoll = Math.floor(Math.random() * 600);
+            rolls[rolls.length] = randomRoll;
+          }
+          resolve(rolls);
+        });
+      }
+      generateRolls().then(rolls => {this.setState({randomNumbers: rolls})});
     }
-    generateRolls().then(rolls => {this.setState({randomNumbers: rolls})});
   }
   render () {
     return (
