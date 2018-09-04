@@ -8,9 +8,10 @@ class DiceRollerApp extends React.Component {
     dieType: [4,6,8,10,12,20,100],
     modifiers: [-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10],
     modValue: 0,
-    randomNumbers: null,
+    rollCounter: 0,
+    randomNumbers: undefined,
     rollResult: undefined,
-    diePick: undefined,
+    dieFace: undefined,
     error: undefined
   };
   handleModChange = (e) => {
@@ -18,12 +19,22 @@ class DiceRollerApp extends React.Component {
     this.setState(() => ({modValue: modValue}));
   };
   handleDieRoll = (e) => {
-    const minDie = 1;
-    const value = e.target.value;
-    const randomNum = Math.floor(Math.random() * (value - minDie + 1)) + minDie;
+    const diePick = e.target.value;
+    const numArray = this.state.randomNumbers;
+    let counter = this.state.rollCounter;
+    const getNumber = () => {
+      while (counter < numArray.length) {
+        this.setState(prevState => {
+          return {rollCounter: prevState.rollCounter + 1}
+        })
+        return numArray[counter];
+      }
+    };
+    let randomNum = getNumber();
+    const roll = (randomNum % diePick) + 1;
     this.setState(() => ({
-      diePick: value,
-      rollResult: randomNum
+      dieFace: diePick,
+      rollResult: roll
     }));
   };
   async componentDidMount() {
@@ -90,7 +101,7 @@ class DiceRollerApp extends React.Component {
           <RollResult
             rollResult={this.state.rollResult}
             modValue={this.state.modValue}
-            diePick={this.state.diePick}
+            dieFace={this.state.dieFace}
           />
         </div>
       </main>
