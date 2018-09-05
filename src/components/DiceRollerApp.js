@@ -20,7 +20,7 @@ class DiceRollerApp extends React.Component {
       // size of the range for min/max is the least common multiple of all dice (offset for correct modulo results)
       // finding lcm by prime factorization: lcm(4,6,8,10,12,20,100) = 2^3 x 3 x 5^2 = 600
       const API_KEY = process.env.BETA_RANDOM_API_KEY;
-      const response = await fetch("https://api.org/json-rpc/1/invoke", {
+      const response = await fetch("https://api.random.org/json-rpc/1/invoke", {
         method: "POST",
         headers: {
           "Content-Type": "application/json-rpc"
@@ -58,28 +58,30 @@ class DiceRollerApp extends React.Component {
     const modValue = e.target.value;
     this.setState(() => ({modValue: modValue}));
   };
-  handleDieRoll = (e) => {
+  handleDieRoll = async (e) => {
     const diePick = e.target.value;
-    const numArray = this.state.randomNumbers;
+    let numArray = this.state.randomNumbers;
     let counter = this.state.rollCounter;
-    const getNumber = () => {
-      while (counter < numArray.length) {
-        this.setState(prevState => {
-          return {rollCounter: prevState.rollCounter + 1}
-        })
-        return numArray[counter];
-      }
+    let randomNum = numArray[counter++];
+    if (counter < numArray.length) {
+      this.setState({rollCounter: counter});
+    } else {
+      counter = 0;
+      numArray = await this.fetchData();
+      this.setState({
+        rollCounter: 0,
+        randomNumbers: numArray
+      });
     };
-    let randomNum = getNumber();
     const roll = (randomNum % diePick) + 1;
-    this.setState(() => ({
+    this.setState({
       diePick: diePick,
       rollResult: roll
-    }));
+    });
   };
   async componentDidMount() {
     const randomNumbersArray = await this.fetchData();
-    this.setState(({randomNumbers: randomNumbersArray}));
+    this.setState({randomNumbers: randomNumbersArray});
   }
   render () {
     return (
