@@ -5,45 +5,22 @@ import RollResult from './RollResult';
 
 class DiceRollerApp extends React.Component {
   state = {
-    dieType: [4,6,8,10,12,20,100],
+    dieFace: [4,6,8,10,12,20,100],
     modifiers: [-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10],
     modValue: 0,
     rollCounter: 0,
     randomNumbers: undefined,
     rollResult: undefined,
-    dieFace: undefined,
+    diePick: undefined,
     error: undefined
   };
-  handleModChange = (e) => {
-    const modValue = e.target.value;
-    this.setState(() => ({modValue: modValue}));
-  };
-  handleDieRoll = (e) => {
-    const diePick = e.target.value;
-    const numArray = this.state.randomNumbers;
-    let counter = this.state.rollCounter;
-    const getNumber = () => {
-      while (counter < numArray.length) {
-        this.setState(prevState => {
-          return {rollCounter: prevState.rollCounter + 1}
-        })
-        return numArray[counter];
-      }
-    };
-    let randomNum = getNumber();
-    const roll = (randomNum % diePick) + 1;
-    this.setState(() => ({
-      dieFace: diePick,
-      rollResult: roll
-    }));
-  };
-  async componentDidMount() {
+  fetchData = async () => {
     try {
       // RANDOM API (https://api.random.org/json-rpc/1/introduction)
       // size of the range for min/max is the least common multiple of all dice (offset for correct modulo results)
       // finding lcm by prime factorization: lcm(4,6,8,10,12,20,100) = 2^3 x 3 x 5^2 = 600
       const API_KEY = process.env.BETA_RANDOM_API_KEY;
-      const response = await fetch("https://api.random.org/json-rpc/1/invoke", {
+      const response = await fetch("https://api.org/json-rpc/1/invoke", {
         method: "POST",
         headers: {
           "Content-Type": "application/json-rpc"
@@ -64,23 +41,45 @@ class DiceRollerApp extends React.Component {
         throw "API did not cooperate";
       }
       const { result: { random: {data} } } = await response.json();
-      this.setState({randomNumbers: data});
+      return data;
     } catch (error) {
       console.log(error);
-      console.log("Initialized backup rolls generator.");
+      console.log("It's fine. Already initialized backup numbers generator.");
       // generate pool of 250 random numbers
-      const generateRolls = () => {
-        return new Promise((resolve, reject) => {
-          let rolls = [];
-          while(rolls.length < 250) {
-            const randomRoll = Math.floor(Math.random() * 600);
-            rolls[rolls.length] = randomRoll;
-          }
-          resolve(rolls);
-        });
+      let numbers = [];
+      while(numbers.length < 250) {
+        const randomNum = Math.floor(Math.random() * 600);
+        numbers[numbers.length] = randomNum;
       }
-      generateRolls().then(rolls => {this.setState({randomNumbers: rolls})});
+      return numbers;
     }
+  };
+  handleModChange = (e) => {
+    const modValue = e.target.value;
+    this.setState(() => ({modValue: modValue}));
+  };
+  handleDieRoll = (e) => {
+    const diePick = e.target.value;
+    const numArray = this.state.randomNumbers;
+    let counter = this.state.rollCounter;
+    const getNumber = () => {
+      while (counter < numArray.length) {
+        this.setState(prevState => {
+          return {rollCounter: prevState.rollCounter + 1}
+        })
+        return numArray[counter];
+      }
+    };
+    let randomNum = getNumber();
+    const roll = (randomNum % diePick) + 1;
+    this.setState(() => ({
+      diePick: diePick,
+      rollResult: roll
+    }));
+  };
+  async componentDidMount() {
+    const randomNumbersArray = await this.fetchData();
+    this.setState(({randomNumbers: randomNumbersArray}));
   }
   render () {
     return (
@@ -90,7 +89,7 @@ class DiceRollerApp extends React.Component {
         </header>
         <div className="content-container">
           <Die
-            dieType={this.state.dieType}
+            dieFace={this.state.dieFace}
             handleDieRoll={this.handleDieRoll}
           />
           <Modifier
@@ -101,7 +100,7 @@ class DiceRollerApp extends React.Component {
           <RollResult
             rollResult={this.state.rollResult}
             modValue={this.state.modValue}
-            dieFace={this.state.dieFace}
+            diePick={this.state.diePick}
           />
         </div>
       </main>

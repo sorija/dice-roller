@@ -3,7 +3,7 @@ import React from 'react';
 const RollResult = (props) => {
   const modNum = Number(props.modValue);
   const result = props.rollResult;
-  const dieFace = props.dieFace;
+  const diePick = props.diePick;
   const data = {
     "1": {
       "className": "roll crit-failure",
@@ -31,7 +31,7 @@ const RollResult = (props) => {
     }
   };
   // display adequate message for natural 1 and natural 20 roll on d20
-  const rollData = data[dieFace === "20" && (result === 1 || result === 20) ? `${result}` : "default"];
+  const rollData = data[diePick === "20" && (result === 1 || result === 20) ? `${result}` : "default"];
   return (
     <div className="roll-result">
       {props.rollResult && (
