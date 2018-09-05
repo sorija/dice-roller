@@ -1,14 +1,6 @@
 const path = require('path');
-// const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-// "dotenv": "^6.0.0",
-// // Heroku sets env variable by default
-// process.env.NODE_ENV = process.env.NODE_ENV || 'development';
-// if (process.env.Node_ENV === 'development') {
-//   require('dotenv').config();
-// };
 
 module.exports = (env) => {
   const isProduction = env === 'production';
@@ -47,11 +39,7 @@ module.exports = (env) => {
     },
     plugins: [
       CSSExtract,
-      new Dotenv(),
-      // // pass the env value down to client-side js
-      // new webpack.DefinePlugin({
-      //   'process.env.BETA_RANDOM_API_KEY': JSON.stringify(process.env.BETA_RANDOM_API_KEY)
-      // })
+      new Dotenv()
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {

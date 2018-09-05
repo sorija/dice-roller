@@ -11,8 +11,7 @@ class DiceRollerApp extends React.Component {
     rollCounter: 0,
     randomNumbers: undefined,
     rollResult: undefined,
-    diePick: undefined,
-    error: undefined
+    diePick: undefined
   };
   fetchData = async () => {
     try {
@@ -40,8 +39,8 @@ class DiceRollerApp extends React.Component {
       if (response.status != 200) {
         throw "API did not cooperate";
       }
-      const { result: { random: {data} } } = await response.json();
-      return data;
+      const responseJSON = await response.json();
+      return responseJSON.result.random.data;
     } catch (error) {
       console.log(error);
       console.log("It's fine. Already initialized backup numbers generator.");
@@ -74,8 +73,7 @@ class DiceRollerApp extends React.Component {
     });
   };
   async componentDidMount() {
-    const randomNumbersArray = await this.fetchData();
-    this.setState({randomNumbers: randomNumbersArray});
+    this.setState({randomNumbers: await this.fetchData()});
   }
   render () {
     return (
