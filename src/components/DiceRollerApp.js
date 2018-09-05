@@ -60,23 +60,17 @@ class DiceRollerApp extends React.Component {
   };
   handleDieRoll = async (e) => {
     const diePick = e.target.value;
-    let numArray = this.state.randomNumbers;
-    let counter = this.state.rollCounter;
-    let randomNum = numArray[counter++];
-    if (counter < numArray.length) {
-      this.setState({rollCounter: counter});
-    } else {
-      counter = 0;
-      numArray = await this.fetchData();
-      this.setState({
-        rollCounter: 0,
-        randomNumbers: numArray
-      });
+    let { rollCounter, randomNumbers } = this.state;
+    let randomNum = randomNumbers[rollCounter++];
+    if (rollCounter >= randomNumbers.length) {
+      rollCounter = 0;
+      randomNumbers = await this.fetchData();
     };
-    const roll = (randomNum % diePick) + 1;
     this.setState({
-      diePick: diePick,
-      rollResult: roll
+      randomNumbers,
+      rollCounter,
+      diePick,
+      rollResult: (randomNum % diePick) + 1
     });
   };
   async componentDidMount() {
