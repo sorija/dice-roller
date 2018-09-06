@@ -39,7 +39,9 @@ module.exports = (env) => {
     },
     plugins: [
       CSSExtract,
-      new Dotenv()
+      new Dotenv({
+        systemvars: isProduction ? true : false
+      })
     ],
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
