@@ -55,7 +55,7 @@ class DiceRollerApp extends React.Component {
   };
   handleModChange = (e) => {
     const modValue = e.target.value;
-    this.setState(() => ({modValue: modValue}));
+    this.setState(() => ({modValue: Number(modValue)}));
   };
   handleDieRoll = async (e) => {
     const diePick = e.target.value;

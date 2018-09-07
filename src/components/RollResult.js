@@ -1,7 +1,7 @@
 import React from 'react';
 
 const RollResult = (props) => {
-  const modNum = Number(props.modValue);
+  const modValue = props.modValue;
   const result = props.rollResult;
   const diePick = props.diePick;
   const data = {
@@ -23,10 +23,10 @@ const RollResult = (props) => {
     },
     "default": {
       "className": "roll",
-      "rollValue": result + modNum,
+      "rollValue": result + modValue,
       "calc": {
         "className": "calc",
-        "innerHTML": result + (modNum >= 0 ? '+' + modNum : modNum)
+        "innerHTML": '' + result + (modValue >= 0 ? '+' + modValue : modValue)
       }
     }
   };
