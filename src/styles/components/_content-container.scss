@@ -1,15 +1,17 @@
 .content-container {
   margin: 0 auto;
+  height: 50vh;
   min-height: 92vh;
   max-height: 95vh;
   //setup grid
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto 2fr .75fr;
+  grid-template-rows: auto 2fr .75fr .25fr;
   grid-template-areas:
     "result result result result"
     "dice dice dice dice"
-    "modifier modifier modifier modifier";
+    "modifier modifier modifier modifier"
+    "footer footer footer footer";
   justify-items: center;
 
   @media (min-width: $desktop-breakpoint) {
@@ -20,6 +22,7 @@
     grid-template-areas: 
       "modifier result result ."
       "dice dice dice dice"
-      "dice dice dice dice";
+      "dice dice dice dice"
+      "footer footer footer footer";
   }
 }

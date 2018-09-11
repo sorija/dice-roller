@@ -1,6 +1,6 @@
 .roll-result {
-  background-color: $deeper-blue;
-  border: 3px solid $deeper-blue;
+  background-color: $trl-blue;
+  border: 3px solid $trl-ash;
   border-radius: $S-size;
   box-shadow: 0 4px 6px 0 $shadow;
   grid-area: result;
@@ -24,8 +24,8 @@
     font-size: 8rem;
   }
   .calc {
-    color: $deep-blue;
-    font-size: 2.5rem;
+    color: $trl-ash;
+    font-size: 4.5rem;
     letter-spacing: $XXS-size;
     margin: 0 auto;
     &.crit-failure, &.crit-success {

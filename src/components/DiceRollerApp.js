@@ -96,6 +96,14 @@ class DiceRollerApp extends React.Component {
             modValue={this.state.modValue}
             diePick={this.state.diePick}
           />
+          <footer className="footer">
+            <details>
+              <summary>© 2018 Wizards. All Rights Reserved. D&Dice is not affiliated with, endorsed, sponsored, or specifically approved by Wizards of the Coast LLC. [read more]</summary>
+                Wizards of the Coast, Dungeons & Dragons, and their logos are trademarks of Wizards of the Coast LLC in the United States and other countries.
+                D&Dice may use the trademarks and other intellectual property of Wizards of the Coast LLC, which is permitted under Wizards' <a href="http://dnd.wizards.com/articles/features/fan-site-kit">Fan Site Policy</a>.
+                For example, Dungeons & Dragons® is a trademark[s] of Wizards of the Coast. For more information about Wizards of the Coast or any of Wizards' trademarks or other intellectual property, please visit their website at (<a href="http://www.wizards.com" target="_blank">www.wizards.com</a>).
+              </details>
+          </footer>
         </div>
       </main>
     )
