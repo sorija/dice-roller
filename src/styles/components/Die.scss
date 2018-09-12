@@ -11,9 +11,11 @@
     "d6 d100 d10";
   grid-row-gap: $XS-size;
   justify-self: stretch;
+  margin-top: $M-size;
   @media (min-width: $desktop-breakpoint){
     font-size: 3rem;
     grid-gap: $M-size $M-size;
+    margin-top: 0;
     min-height: 40vh;
   }
 }

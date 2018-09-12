@@ -6,7 +6,7 @@
   //setup grid
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto 2fr .75fr .25fr;
+  grid-template-rows: auto 2fr .70fr .25fr;
   grid-template-areas:
     "result result result result"
     "dice dice dice dice"
