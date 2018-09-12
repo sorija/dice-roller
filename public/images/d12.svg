@@ -3,38 +3,6 @@
 
 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="34mm" height="34mm" viewBox="0 0 34 34" version="1.1" id="svg65" inkscape:version="0.92.3 (2405546, 2018-03-11)" sodipodi:docname="d12.svg">
 <defs id="defs59">
-<filter inkscape:menu-tooltip="3D warped, iridescent pearly shell texture" inkscape:menu="Materials" inkscape:label="3D Mother of Pearl" width="1.5" x="-0.25" height="1.5" y="-0.25" style="color-interpolation-filters:sRGB;" id="filter1180">
-<feGaussianBlur result="result8" stdDeviation="3" id="feGaussianBlur1154" />
-<feTurbulence baseFrequency="0.03 0.03" numOctaves="8" type="fractalNoise" result="result7" seed="77" id="feTurbulence1156" />
-<feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1.6 -0.6 " result="result5" id="feColorMatrix1158" />
-<feComposite in2="result8" operator="in" in="result7" result="result6" id="feComposite1160" />
-<feDisplacementMap in2="result6" result="result4" scale="60" yChannelSelector="A" xChannelSelector="A" in="result5" id="feDisplacementMap1162" />
-<feConvolveMatrix order="3 3" kernelMatrix="2 0 0 0 4 0 0 0 -2 " targetX="2" targetY="2" divisor="2" result="result9" id="feConvolveMatrix1164" />
-<feComposite in2="SourceGraphic" operator="atop" in="result9" result="result10" id="feComposite1166" />
-<feBlend in2="result10" mode="darken" result="fbSourceGraphic" id="feBlend1168" />
-<feGaussianBlur result="result0" in="fbSourceGraphic" stdDeviation="5" id="feGaussianBlur1170" />
-<feSpecularLighting specularExponent="25" specularConstant="1" surfaceScale="5" lighting-color="rgb(242,215,108)" result="result1" in="result0" id="feSpecularLighting1174">
-<feDistantLight azimuth="235" elevation="60" id="feDistantLight1172" />
-</feSpecularLighting>
-<feComposite operator="in" result="result2" in="result1" in2="fbSourceGraphic" id="feComposite1176" />
-<feComposite k3="1" k2="1" operator="arithmetic" result="result4" in="fbSourceGraphic" in2="result2" id="feComposite1178" />
-</filter>
-<filter inkscape:menu-tooltip="3D warped, iridescent pearly shell texture" inkscape:menu="Materials" inkscape:label="3D Mother of Pearl" width="1.5" x="-0.25" height="1.5" y="-0.25" style="color-interpolation-filters:sRGB;" id="filter1208">
-<feGaussianBlur result="result8" stdDeviation="3" id="feGaussianBlur1182" />
-<feTurbulence baseFrequency="0.03 0.03" numOctaves="8" type="fractalNoise" result="result7" seed="77" id="feTurbulence1184" />
-<feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1.6 -0.6 " result="result5" id="feColorMatrix1186" />
-<feComposite in2="result8" operator="in" in="result7" result="result6" id="feComposite1188" />
-<feDisplacementMap in2="result6" result="result4" scale="60" yChannelSelector="A" xChannelSelector="A" in="result5" id="feDisplacementMap1190" />
-<feConvolveMatrix order="3 3" kernelMatrix="2 0 0 0 4 0 0 0 -2 " targetX="2" targetY="2" divisor="2" result="result9" id="feConvolveMatrix1192" />
-<feComposite in2="SourceGraphic" operator="atop" in="result9" result="result10" id="feComposite1194" />
-<feBlend in2="result10" mode="darken" result="fbSourceGraphic" id="feBlend1196" />
-<feGaussianBlur result="result0" in="fbSourceGraphic" stdDeviation="5" id="feGaussianBlur1198" />
-<feSpecularLighting specularExponent="25" specularConstant="1" surfaceScale="5" lighting-color="rgb(242,215,108)" result="result1" in="result0" id="feSpecularLighting1202">
-<feDistantLight azimuth="235" elevation="60" id="feDistantLight1200" />
-</feSpecularLighting>
-<feComposite operator="in" result="result2" in="result1" in2="fbSourceGraphic" id="feComposite1204" />
-<feComposite k3="1" k2="1" operator="arithmetic" result="result4" in="fbSourceGraphic" in2="result2" id="feComposite1206" />
-</filter>
 </defs>
 <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="1.7203" inkscape:cx="54.048" inkscape:cy="79.245" inkscape:document-units="mm" inkscape:current-layer="layer1" showgrid="false" inkscape:window-width="717" inkscape:window-height="415" inkscape:window-x="66" inkscape:window-y="93" inkscape:window-maximized="0" />
 <metadata id="metadata62">
