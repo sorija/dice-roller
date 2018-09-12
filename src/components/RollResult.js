@@ -5,28 +5,28 @@ const RollResult = (props) => {
   const result = props.rollResult;
   const diePick = props.diePick;
   const data = {
-    "1": {
-      "className": "roll crit-failure",
-      "rollValue": result,
-      "calc": {
-        "className": "calc crit-failure",
-        "innerHTML": "Critical Failure!"
+    1: {
+      className: "roll crit-failure",
+      rollValue: result,
+      calc: {
+        className: "calc crit-failure",
+        innerHTML: "Critical Failure!"
       }
     },
-    "20": {
-      "className": "roll crit-success",
-      "rollValue": result,
-      "calc": {
-        "className": "calc crit-success",
-        "innerHTML": "Critical Success!"
+    20: {
+      className: "roll crit-success",
+      rollValue: result,
+      calc: {
+        className: "calc crit-success",
+        innerHTML: "Critical Success!"
       }
     },
-    "default": {
-      "className": "roll",
-      "rollValue": result + modValue,
-      "calc": {
-        "className": "calc",
-        "innerHTML": '' + result + (modValue >= 0 ? '+' + modValue : modValue)
+    default: {
+      className: "roll",
+      rollValue: result + modValue,
+      calc: {
+        className: "calc",
+        innerHTML: '' + result + (modValue >= 0 ? '+' + modValue : modValue)
       }
     }
   };
